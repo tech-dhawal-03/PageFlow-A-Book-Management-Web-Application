@@ -11,6 +11,12 @@ const nextConfig: NextConfig = {
           port: '', // leave empty unless a custom port is used
           pathname: '/**', // supports wildcard
         },
+        {
+          protocol: 'https',
+          hostname: 'm.media-amazon.com',
+          port: '', // leave empty unless a custom port is used
+          pathname: '/**', // supports wildcard
+        },
       
     ]
   }

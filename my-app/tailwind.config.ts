@@ -9,6 +9,10 @@ export default {
   ],
   theme: {
     extend: {
+      clipPath: {
+        'half-right': 'inset(0 50% 0 0)',
+      },
+      
       fontFamily: {
         "ibm-plex-sans": ["IBM Plex Sans", "sans-serif"],
         "bebas-neue": ["var(--bebas-neue)"],

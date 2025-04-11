@@ -42,9 +42,7 @@ const RootLayout = ({children}: {children: ReactNode;}) =>{
   return (
     <html lang="en">
       <body
-        className={`${ibmPlexSans.className} ${bebasNeue.variable} bg-gradient-to-br from-[#111624] via-[#1a1f38] to-[#2a3154]
-
-]
+        className={`${ibmPlexSans.className} ${bebasNeue.variable} bg-[#0B0F1E]
  antialiased`}
       >
         {children}

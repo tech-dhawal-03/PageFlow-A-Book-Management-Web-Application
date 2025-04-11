@@ -1,19 +1,19 @@
-import Header from '@/components/Header'
 import React, { ReactNode } from 'react'
+import Navbar from '@/components/Navbar'
 
 function Layout({children} : {children:ReactNode}) {
   return (
-    <main className='flex min-h-screen flex-1 flex-col bg-pattern bg-cover bg-top bg-dark-100 px-5 xs:px-10 md:px-16'>
-        <div className='mx-auto max-w-7xl'>
-            <Header/>
-            <div className='mt-20 pb-20'>
-                {children}
+   
+    <main className='min-h-screen bg-[#0B0F1E]  overflow-x-hidden'>
 
-            </div>
-
-        </div>
-
+      <div>
+        <Navbar/>
+      </div>
+      
+      {children}
     </main>
+    
+   
   )
 }
 

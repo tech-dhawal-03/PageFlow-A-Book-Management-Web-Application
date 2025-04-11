@@ -1,13 +1,12 @@
 import React from 'react'
-import BookOverview from '@/components/ui/BookOverview'
-import BookList from '@/components/ui/BookList'
+import BookDetails from '@/components/BookDetails'
 import { sampleBooks } from '../constants'
+
 
 function Home() {
   return (
     <div>
-      <BookOverview {...sampleBooks[0]} />
-      <BookList/>
+     <BookDetails {...sampleBooks[0]} />
       
     </div>
   )
