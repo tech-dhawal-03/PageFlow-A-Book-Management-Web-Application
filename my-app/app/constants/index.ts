@@ -1,3 +1,4 @@
+
 export const sampleBooks = [
     {
       book_id: 1,
@@ -16,3 +17,23 @@ export const sampleBooks = [
         "A dazzling novel about all the choices that go into a life well lived, The Midnight Library tells the story of Nora Seed as she finds herself between life and death. A dazzling novel about all the choices that go into a life well lived, The Midnight Library tells the story of Nora Seed as she finds herself between life and death.",
     },
 ]
+
+
+
+
+export const FIELD_NAMES = {
+  fullName : "Full Name",
+  email : "E-mail",
+  universityId : "University ID Number",
+  password : "Password",
+  universityCard : "Upload University ID Card"
+}
+
+
+export const FIELD_TYPES = {
+  fullName : "text",
+  email : "text",
+  universityId : "number",
+  password : "password ",
+  
+}

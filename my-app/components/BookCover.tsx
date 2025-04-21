@@ -3,9 +3,6 @@ import BookCoverSvg from '@/components/BookCoverSvg'
 import Image from 'next/image'
 
 
-
-
-
 interface PROPS
 {
     variant : "wide" | "small"
@@ -16,7 +13,7 @@ interface PROPS
 
 const BookCover = ({variant,className,coverColor,coverImage}:PROPS) => {
   return (
-    <div className='hover:scale-105'>
+    <div className=''>
       <BookCoverSvg coverColor={coverColor} />
 
       <div className='absolute z-10 w-80 h-[450px] hover:scale-105'>
