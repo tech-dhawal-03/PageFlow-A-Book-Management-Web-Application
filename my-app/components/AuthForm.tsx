@@ -84,24 +84,24 @@ const AuthForm = <T extends FieldValues>({
                                 : 
                                 <Input required placeholder={FIELD_TYPES[field.name as keyof typeof FIELD_TYPES ]
 
-                                } {...field} />
+                                } {...field} className='form-input' />
                       }
                             </FormControl>
                             <FormDescription>
-                                This is your public display name.
+                                This is your {field.name}.
                             </FormDescription>
                             <FormMessage />
                         </FormItem>
                     )}
-                                        />
-
-
+                        />
                     ))}
 
 
                 
 
-                    <Button type="submit">Submit</Button>
+                    <Button type="submit" className='bg-yellow-300 text-black w-full'>
+                    {isSignIn ? "Sign In": "Sign Up" }   
+                    </Button>
                 </form>
             </Form>
 
