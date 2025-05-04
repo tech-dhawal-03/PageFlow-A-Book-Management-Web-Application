@@ -6,15 +6,19 @@ import {
     ImageKitServerError,
     ImageKitUploadNetworkError,
     upload,
+    Image,
 } from "@imagekit/next";
 import { useRef, useState } from "react";
 import { toast } from "sonner"
+import config from "@/lib/config";
+
 
 
 
 const ImageUpload = () => {
     // State to keep track of the current upload progress (percentage)
     const [progress, setProgress] = useState(0);
+    const [uploadedFile, setUploadedFile] = useState <Record<string,any> | null>(null);
 
     // Create a ref for the file input element to access its files easily
     const fileInputRef = useRef<HTMLInputElement>(null);
@@ -56,6 +60,7 @@ const ImageUpload = () => {
 
         // Extract the first file from the file input
         const file = fileInput.files[0];
+        console.log(`this fill is coming after reading upload : ${file}`);
 
         // Retrieve authentication parameters for the upload.
         let authParams;
@@ -84,8 +89,12 @@ const ImageUpload = () => {
                 // Abort signal to allow cancellation of the upload if needed.
                 abortSignal: abortController.signal,
             });
+
             console.log("Upload response:", uploadResponse);
+            setUploadedFile(uploadResponse)
             toast("Image Uploaded Successfully")
+            // console.log(uploadedFile);
+           
             
 
         } catch (error) {
@@ -105,6 +114,10 @@ const ImageUpload = () => {
         }
     };
 
+
+
+
+    
     return (
         <>
             {/* File input element using React ref */}
@@ -113,11 +126,30 @@ const ImageUpload = () => {
             <button type="button" onClick={handleUpload} className="bg-yellow-300 text-black w-1/2 p-2 items-center rounded-sm">
                 Upload file
             </button>
+
             <br />
             {/* Display the current upload progress */}
             Upload Progress: <progress value={progress} max={100}>
               
             </progress>
+
+
+
+            {
+                uploadedFile && 
+                <Image
+                    urlEndpoint={config.env.imagekit.urlEndpoint}
+                    src={uploadedFile.filePath}
+                    width={500}
+                    height={500}
+                    alt="Picture of the author"
+                />
+            }
+
+
+           
+
+         
         </>
     );
 };
