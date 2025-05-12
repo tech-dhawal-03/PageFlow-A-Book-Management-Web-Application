@@ -141,7 +141,7 @@ const ImageUpload = () => {
                     urlEndpoint={config.env.imagekit.urlEndpoint}
                     src={uploadedFile.filePath}
                     width={500}
-                    height={500}
+                    height={300}
                     alt="Picture of the author"
                 />
             }
